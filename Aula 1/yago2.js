@@ -1,3 +1,3 @@
-tteste
-teste 05
-teste 02
+function helloWorld() {
+  alert("Hello World");
+}
