@@ -6,6 +6,7 @@ import NaoEncontrada from "./NaoEncontrada";
 import InformacoesUsuario from "./InformacoesUsuario";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PaginaInicial from "./PaginaInicial.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
