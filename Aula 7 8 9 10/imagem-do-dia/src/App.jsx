@@ -7,22 +7,29 @@ import foguete from "./assets/animacao.json";
 
 function App() {
   const [enderecoImagem, setEnderecoImagem] = useState("")
-  const [data, setData] = useState("03/04/2024")
+  const [data, setData] = useState(new Date().toISOString().split('T')[0])
   const [carregando, setCarregando] = useState(true)
 
   const buscarDadosApi = async () => {
     setCarregando(true)
-    // data = "03/04/2024"
-    const dia = data.substring(0, 2)
-    const mes = data.substring(3,5)
-    const ano = data.substring(6,10)
-    const dataFormatada = `${ano}-${mes}-${dia}`
+    const hoje = new Date()
+    const ano = hoje.getFullYear();
+    //            3              4        "4"         "04"
+    const mes = (hoje.getMonth() + 1).toString().padStart(2, '0');
+    // janeiro = 0
+    // fevereiro = 1
+    // ---
+    // dezembro = 11
+    const dia = hoje.getDate().toString().padStart(2, '0');
+    //                  2024    "04"   "17" 
+    const dataAtual = `${ano}-${mes}-${dia}`;
+    // const dataAtual = new Date().toISOString().split('T')[0]
 
     // COMO SERIA UTILIZANDO SLIP AO INVES DE SUBSTRING
     // const listaCaracteresData = data.split('/')
     // const dataFormatada = `${listaCaracteresData[2]}-${listaCaracteresData[1]}-${listaCaracteresData[0]}`
 
-    const url = `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${dataFormatada}`
+    const url = `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${dataAtual}`
     // axios.get(url).then(dadosNASA => {
     //   console.log(dadosNASA.data)
     //   setEnderecoImagem(dadosNASA.data.url)
@@ -34,7 +41,7 @@ function App() {
     setEnderecoImagem(dadosNASA.data.url)
     setCarregando(false)
   }
-
+  
   useEffect(() => {
     buscarDadosApi()
   }, [])
