@@ -1,7 +1,7 @@
 # Site para visualização de asteróides próximos da terra
 
 Utilizando a biblioteca React, desenvolva um novo projeto frontend de um site que irá possuir três páginas.
-Seu site deve possuir um menu que seja apresentado em todas as páginas. Esse menu deve possuir link para as 3 páginas abaixo.
+Seu site deve possuir um menu que seja apresentado em todas as páginas. Esse menu deve possuir link para as páginas 1 (listagem de asteroides) e 3 (sobre mim).
 
 ## Página 1
 
