@@ -28,8 +28,8 @@ function App() {
     // COMO SERIA UTILIZANDO SLIP AO INVES DE SUBSTRING
     // const listaCaracteresData = data.split('/')
     // const dataFormatada = `${listaCaracteresData[2]}-${listaCaracteresData[1]}-${listaCaracteresData[0]}`
-
-    const url = `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${dataAtual}`
+    const apiKey = import.meta.env.VITE_API_KEY
+    const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${dataAtual}`
     // axios.get(url).then(dadosNASA => {
     //   console.log(dadosNASA.data)
     //   setEnderecoImagem(dadosNASA.data.url)
